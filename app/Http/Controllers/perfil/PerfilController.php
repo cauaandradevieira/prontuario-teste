@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\perfil\PerfilRequest;
 use Illuminate\Http\Request;
 use App\Models\usuario\Perfil;
+use Illuminate\Auth\Events\Validated;
+use App\Exceptions\Perfil\PerfilNaoEncontradoException;
 
 class PerfilController extends Controller
 {
@@ -47,24 +49,28 @@ class PerfilController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Perfil $perfil)
+    public function edit($id)
     {
+        $perfil = Perfil::find($id);
+
+        if (!$perfil) {
+            throw new PerfilNaoEncontradoException($id);
+        }
+
         return view('perfil.editar', compact('perfil'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(PerfilRequest $request, Perfil $perfil)
+    public function update(PerfilRequest $request, $id)
     {
-        $request->validated();
-
-        if(!$perfil)
-        {
-            return redirect()->route('perfil.index')->with('message', 'Usuario não encontrado');
+        $perfil = Perfil::find($id);
+        if (!$perfil) {
+            throw new \App\Exceptions\Perfil\PerfilNaoEncontradoException($id);
         }
 
-        $perfil->update($request->all());
+        $perfil->update($request->validated());
         return redirect()->route('perfil.index')->with('message', 'Usuário atualizado com sucesso !!');
     }
 
@@ -74,9 +80,8 @@ class PerfilController extends Controller
     public function destroy(Perfil $perfil)
     {
         $foiDeletado = $perfil->delete();
-        if(!$foiDeletado)
-        {
-            return redirect()->route('perfil.index')->with('message','Não foi possível deletar esse perfil');
+        if (!$foiDeletado) {
+            return redirect()->route('perfil.index')->with('message', 'Não foi possível deletar esse perfil');
         }
         return redirect()->route('perfil.index')->with('message', 'Usuário deletado com sucesso !!');
     }

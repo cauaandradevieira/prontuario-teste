@@ -2,19 +2,18 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\perfil\PerfilController;
-
+use App\Exceptions\Perfil\PerfilNaoEncontradoException;
+use App\Http\Controllers\TesteController;
 Route::get('/', function () {
-    return view('perfil.perfis');
+    return view('perfil.perfil');
 });
-
-
     // ROTAS PERFIL
 Route::prefix('perfil')->group(function(){
     // Rotas GET
     Route::get('/', [PerfilController::class, 'index'])->name('perfil.index');
     Route::get('/criar', [PerfilController::class, 'create'])->name('perfil.create');
     Route::get('/{perfil}', [PerfilController::class, 'show'])->name('perfil.show');
-    Route::get('/{perfil}/editar', [PerfilController::class, 'edit'])->name('perfil.edit');
+    Route::get('/{id}/editar', [PerfilController::class, 'edit'])->name('perfil.edit');
     
     // Rotas POST/PUT/DELETE
     Route::post('/', [PerfilController::class, 'store'])->name('perfil.store');
