@@ -7,6 +7,10 @@ use App\Http\Controllers\TesteController;
 Route::get('/', function () {
     return view('perfil.perfil');
 });
+
+Route::get('dashboard', function(){
+    return view('dashboard');
+});
     // ROTAS PERFIL
 Route::prefix('perfil')->group(function(){
     // Rotas GET
