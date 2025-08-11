@@ -21,3 +21,7 @@ Route::prefix('perfil')->group(function(){
     Route::put('/{perfil}', [PerfilController::class, 'update'])->name('perfil.update');
     Route::delete('/{perfil}', [PerfilController::class, 'destroy'])->name('perfil.destroy');
 });
+
+Route::get('dashboard', function(){
+    return view('dashboard');
+});
