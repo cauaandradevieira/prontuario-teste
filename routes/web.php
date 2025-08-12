@@ -3,10 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\perfil\PerfilController;
 
-Route::get('/', function () {
-    return view('perfil.perfis');
+     // PADRÃO
+Route::get('/', function(){
+    return view('dashboard');
 });
-
 
     // ROTAS PERFIL
 Route::prefix('perfil')->group(function(){
@@ -20,8 +20,4 @@ Route::prefix('perfil')->group(function(){
     Route::post('/', [PerfilController::class, 'store'])->name('perfil.store');
     Route::put('/{perfil}', [PerfilController::class, 'update'])->name('perfil.update');
     Route::delete('/{perfil}', [PerfilController::class, 'destroy'])->name('perfil.destroy');
-});
-
-Route::get('dashboard', function(){
-    return view('dashboard');
 });
