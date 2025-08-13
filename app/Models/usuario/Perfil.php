@@ -7,10 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Perfil extends Model
 {
     protected $table = 'perfil';
-    protected $fillable = ['nome'];
+    protected $fillable = ['name', 'id'];
 
     public $timestamps = true;
-
-    const CREATED_AT = 'criado_em';
-    const UPDATED_AT = 'atualizado_em';
 }

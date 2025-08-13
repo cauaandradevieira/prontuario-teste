@@ -7,6 +7,7 @@ export default defineConfig({
             input: [
                 'resources/css/app.css',
                 'resources/js/app.js',
+                'resources/js/inputPerfil.js',
                 'resources/css/sidebar.css',
                 'resources/css/dashboard/card.css'],
             refresh: true,

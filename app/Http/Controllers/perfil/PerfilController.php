@@ -67,7 +67,7 @@ class PerfilController extends Controller
     {
         $perfil = Perfil::find($id);
         if (!$perfil) {
-            throw new \App\Exceptions\Perfil\PerfilNaoEncontradoException($id);
+            throw new PerfilNaoEncontradoException($id);
         }
 
         $perfil->update($request->validated());

@@ -1,6 +1,6 @@
 <div>
-    <label for="nome">nome</label>
-    <input type="text" name="nome" value="{{ $perfil->nome ?? old('nome') }}">
+    <label for="name">nome</label>
+    <input type="text" name="name" value="{{ $perfil->name ?? old('name') }}">
 </div>
 
 <button type="submit" class="btn btn-primary">Enviar</button>

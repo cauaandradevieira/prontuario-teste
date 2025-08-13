@@ -3,6 +3,7 @@
 namespace App\Http\Requests\perfil;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
 
 class PerfilRequest extends FormRequest
 {
@@ -11,7 +12,7 @@ class PerfilRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return true;
+        return Auth::check();
     }
 
     /**
@@ -23,14 +24,15 @@ class PerfilRequest extends FormRequest
     {
         
         return [
-            "nome" => "required|string|max:255|unique:perfil,nome"
+            "name" => "required|alpha|string|max:255|unique:perfil,name"
         ];
     }
 
     public function messages(): array {
         return [
-            "nome.unique" => "Este perfil já está cadastrado no sistema.",
-            "nome.*" => "Nome do perfil inválido, tente novamente."
+            "name.unique" => "Este perfil já está cadastrado no sistema.",
+            'name.alpha' => 'O nome não pode conter números ou caracteres especiais.',
+            "name.*" => "Nome do perfil inválido, tente novamente.",
         ];
     }
 }
