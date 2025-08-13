@@ -1,48 +1,60 @@
 .card {
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-        border-left: 4px solid;
-        border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    border-left: 4px solid;
+    border: none;
 
-    }
+}
 
-    .sidebar {
-        width: 200px;
-        height: 100%;
-    }
+.sidebar {
+    width: 200px;
+    height: 100%;
+}
 
-    .card-border-left-green {
-        border-left: 4px solid seagreen;
-    }
+.card-border-green {
+    border-top: 1px solid #ebe8e8;
+    border-right: 1px solid #ebe8e8;
+    border-bottom: 1px solid #ebe8e8;
+    border-left: 4px solid seagreen;
+}
 
-    .card-border-left-blue {
-        border-left: 4px solid #084994;
-    }
+.card-border-blue {
+    border-top: 1px solid #ebe8e8;
+    border-right: 1px solid #ebe8e8;
+    border-bottom: 1px solid #ebe8e8;
+    border-left: 4px solid #084994;
+}
 
-    .card-border-left-yelow {
-        border-left: 4px solid #cabd05;
-    }
+.card-border-yelow {
+    border-top: 1px solid #ebe8e8;
+    border-right: 1px solid #ebe8e8;
+    border-bottom: 1px solid #ebe8e8;
+    border-left: 4px solid #cabd05;
+}
 
-    .card-border-left-red {
-        border-left: 4px solid #ca0c05;
-    }
+.card-border-red {
+    border-top: 1px solid #ebe8e8;
+    border-right: 1px solid #ebe8e8;
+    border-bottom: 1px solid #ebe8e8;
+    border-left: 4px solid #ca0c05;
+}
 
-    .card-text-yelow {
-        color: #cabd05;
-    }
+.card-text-yelow {
+    color: #cabd05;
+}
 
-    .card-text-red {
-        color: #ca0c05;
-    }
+.card-text-red {
+    color: #ca0c05;
+}
 
-    .card-text-blue {
-        color: #084994;
-    }
+.card-text-blue {
+    color: #084994;
+}
 
-    .text-xs {
-        font-size: 0.8rem;
-    }
+.text-xs {
+    font-size: 0.8rem;
+}
 
-    .icon {
-        font-size: 1.5rem;
-        opacity: 0.5;
-    }
+.icon {
+    font-size: 1.5rem;
+    opacity: 0.5;
+}

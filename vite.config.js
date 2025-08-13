@@ -5,11 +5,15 @@ export default defineConfig({
     plugins: [
         laravel({
             input: [
-                'resources/css/app.css',
+                'resources/css/app.css'
+
                 'resources/js/app.js',
                 'resources/js/inputPerfil.js',
                 'resources/css/sidebar.css',
-                'resources/css/dashboard/card.css'],
+                'resources/css/dashboard/card.css',
+                'resources/js/app.js',
+                'resources/js/sidebar.js'
+            ],
             refresh: true,
         }),
     ],
