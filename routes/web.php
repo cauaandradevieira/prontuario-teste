@@ -8,7 +8,7 @@ Route::get('/', function(){
     return view('dashboard');
 });
 
-    // ROTAS PERFIL
+   // Rotas de Perfil
 Route::prefix('perfil')->group(function(){
     // Rotas GET
     Route::get('/', [PerfilController::class, 'index'])->name('perfil.index');
@@ -20,4 +20,18 @@ Route::prefix('perfil')->group(function(){
     Route::post('/', [PerfilController::class, 'store'])->name('perfil.store');
     Route::put('/{perfil}', [PerfilController::class, 'update'])->name('perfil.update');
     Route::delete('/{perfil}', [PerfilController::class, 'destroy'])->name('perfil.destroy');
+});
+
+ // Rotas de Idosos
+Route::prefix('idoso')->group(function(){
+    // Rotas GET
+    Route::get('/', [PerfilController::class, 'index'])->name('idoso.index');
+    Route::get('/criar', [PerfilController::class, 'create'])->name('idoso.create');
+    Route::get('/{id}', [PerfilController::class, 'show'])->name('idoso.show');
+    Route::get('/{id}/editar', [PerfilController::class, 'edit'])->name('idoso.edit');
+    
+    // Rotas POST/PUT/DELETE
+    Route::post('/', [PerfilController::class, 'store'])->name('idoso.store');
+    Route::put('/{idoso}', [PerfilController::class, 'update'])->name('idoso.update');
+    Route::delete('/{idoso}', [PerfilController::class, 'destroy'])->name('idoso.destroy');
 });
