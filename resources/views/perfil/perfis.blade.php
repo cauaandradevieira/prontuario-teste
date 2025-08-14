@@ -1,5 +1,6 @@
 @extends('layouts.principal')
 @section('titulo', 'Ver Perfis • Prontuário')
+@section('scripts') @vite('resources/js/dataTable.js') @endsection
 
 @section('conteudo')
     {{-- sidebar ( sem container) --}}
@@ -18,7 +19,7 @@
         </div>
     @else
         <table class="table table-hover table-bordered align-middle">
-            <thead">
+            <thead>
                 <tr>
                     <th class="text-center">Nome</th>
                     <th class="text-center">Data Criada</th>
@@ -32,7 +33,8 @@
                     <tr>
                         <td class="text-center ">{{ $perfil->nome }}</td>
                         <td class="text-center"><small class="text-muted">{{ $perfil->criado_em->format('d/m/Y H:i') }}</small></td>
-                        <td class="text-center"><small class="text-muted">{{ $perfil->atualizado_em->format('d/m/Y H:i') }}</small></td>
+                        <td class="text-center"><small class="text-muted">{{ $perfil->atualizado_em->format('d/m/Y H:i') }}</small>
+                        </td>
                         <td class="text-center"><span class="badge rounded-pill bg-success">Habilitado</span></td>
                         <td class="text-center">
                             <div class="d-flex justify-content-center flex-wrap gap-2">

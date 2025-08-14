@@ -13,7 +13,7 @@ class IdosoController extends Controller
      */
     public function index()
     {
-        $idosos = Idoso::findAll();
+        $idosos = Idoso::all();
         return view("idoso.idosos",[
             "idosos" => $idosos
         ]);
@@ -24,7 +24,7 @@ class IdosoController extends Controller
      */
     public function create()
     {
-        //
+        return view('idoso.criar');
     }
 
     /**
@@ -32,38 +32,65 @@ class IdosoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //$request = $request->validated();
+        Idoso::create($request->all());
+        return redirect()->route('idoso.index')->with('success', 'idoso criado com sucesso');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(int $id)
     {
-        //
+        $idoso = Idoso::find($id);
+
+        // if($idoso){ return throw IdosoNotFoundException::with('error',''); }
+        
+        return view('idoso.idoso', compact('idoso'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(int $id)
     {
-        //
+        $idoso = Idoso::find($id);
+
+        // if($idoso){ return throw IdosoNotFoundException::with('error',''); }
+
+        return view('idoso.editar', [
+            'idoso' => $idoso
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Idoso $idoso)
     {
-        //
+        //$request->validated();
+
+        $idoso->update($request->all());
+
+        return redirect()->route('idoso.index')
+            ->with('message', 'Idoso atualizado com sucesso !!');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(int $id)
     {
-        //
+        $idoso = Idoso::find($id);
+
+        // if($idoso){ return throw IdosoNotFoundException::with('error',''); }
+
+        $foiDeletado = $idoso->delete();
+
+        if(!$foiDeletado)
+        {
+            return redirect()->route('perfil.index')->with('message','Não foi possível deletar esse perfil');
+        }
+        return redirect()->route('perfil.index')->with('message', 'Usuário deletado com sucesso !!');
     }
 }

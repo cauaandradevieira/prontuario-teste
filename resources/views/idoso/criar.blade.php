@@ -1,11 +1,11 @@
 @extends('layouts.principal')
-@section('titulo', 'perfil')
+@section('titulo', 'idoso')
 
 @section('conteudo')
 
-    <form action="{{ route('perfil.store') }}" method="POST">
+    <form action="{{ route('idoso.store') }}" method="POST">
         @csrf()
-        @include('perfil.formulario')
+        @include('idoso.formulario')
     </form>
 
     @error('nome')

@@ -9,7 +9,8 @@ export default defineConfig({
                 'resources/css/sidebar.css',
                 'resources/css/dashboard/card.css',
                 'resources/js/app.js',
-                'resources/js/sidebar.js'
+                'resources/js/sidebar.js',
+                'resources/js/dataTable.js'
             ],
             refresh: true,
         }),

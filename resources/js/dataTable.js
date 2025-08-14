@@ -5,7 +5,7 @@ import 'datatables.net-bs5/css/dataTables.bootstrap5.min.css'; // CSS
 import 'datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css'; // CSS responsivo
 
 
-$(function() {
+$( () => {
   $('#data-table').DataTable({
     responsive: true,
     language: {

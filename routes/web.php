@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\idoso\IdosoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\perfil\PerfilController;
 
@@ -25,13 +26,13 @@ Route::prefix('perfil')->group(function(){
  // Rotas de Idosos
 Route::prefix('idoso')->group(function(){
     // Rotas GET
-    Route::get('/', [PerfilController::class, 'index'])->name('idoso.index');
-    Route::get('/criar', [PerfilController::class, 'create'])->name('idoso.create');
-    Route::get('/{id}', [PerfilController::class, 'show'])->name('idoso.show');
-    Route::get('/{id}/editar', [PerfilController::class, 'edit'])->name('idoso.edit');
+    Route::get('/', [IdosoController::class, 'index'])->name('idoso.index');
+    Route::get('/criar', [IdosoController::class, 'create'])->name('idoso.create');
+    Route::get('/{id}', [IdosoController::class, 'show'])->name('idoso.show');
+    Route::get('/{id}/editar', [IdosoController::class, 'edit'])->name('idoso.edit');
     
     // Rotas POST/PUT/DELETE
-    Route::post('/', [PerfilController::class, 'store'])->name('idoso.store');
-    Route::put('/{idoso}', [PerfilController::class, 'update'])->name('idoso.update');
-    Route::delete('/{idoso}', [PerfilController::class, 'destroy'])->name('idoso.destroy');
+    Route::post('/', [IdosoController::class, 'store'])->name('idoso.store');
+    Route::put('/{idoso}', [IdosoController::class, 'update'])->name('idoso.update');
+    Route::delete('/{idoso}', [IdosoController::class, 'destroy'])->name('idoso.destroy');
 });
