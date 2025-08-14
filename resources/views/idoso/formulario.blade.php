@@ -1,80 +1,84 @@
-<!-- Modal -->
-<div class="form-group">
-    <label for="nome">Nome:</label>
-    <input type="text" id="nome" name="nome" maxlength="100" required>
-</div>
+<div class="container shadow-lg">
+    <h3 style="text-align: center;" class="fw-bold">Cadastro de idosos</h3>
 
-<div class="form-group">
-    <label for="rg">RG:</label>
-    <input type="text" id="rg" name="rg" maxlength="20" required>
-</div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="nome">Nome <span class="required-field" style="color: red;">*</span></label>
+                <input type="text" class="form-control" id="nome" required>
+            </div>
 
-<div class="form-group">
-    <label for="cpf">CPF:</label>
-    <input type="text" id="cpf" name="cpf" maxlength="11" required>
-</div>
+            <div class="form-group">
+                <label for="rg">RG <span class="required-field" style="color: red;">*</span></label>
+                <input type="text" class="form-control" id="rg" maxlength="7">
+            </div>
 
-<div class="form-group">
-    <label for="estado_civil">Estado Civil:</label>
-    <select id="estado_civil" name="estado_civil" required>
-        <option value="">Selecione</option>
-        <option value="Solteiro">Solteiro(a)</option>
-        <option value="Casado">Casado(a)</option>
-        <option value="Divorciado">Divorciado(a)</option>
-        <option value="Viúvo">Viúvo(a)</option>
-        <option value="Separado">Separado(a)</option>
-    </select>
-</div>
+            <div class="form-group">
+                <label for="cpf">CPF <span class="required-field" style="color: red;">*</span></label>
+                <input type="text" class="form-control" id="cpf" maxlength="11" required>
+            </div>
 
-<div class="form-group">
-    <label for="apelido">Apelido (opcional):</label>
-    <input type="text" id="apelido" name="apelido" maxlength="100">
-</div>
+            <div class="form-group">
+                <label for="estado_civil">Estado Civil <span class="required-field" style="color: red;">*</span></label>
+                <select class="form-control" id="estado_civil" required>
+                    <option value="">Selecione</option>
+                    <option value="Solteiro">Solteiro(a)</option>
+                    <option value="Casado">Casado(a)</option>
+                    <option value="Divorciado">Divorciado(a)</option>
+                </select>
+            </div>
 
-<div class="form-group">
-    <label for="nacionalidade">Nacionalidade:</label>
-    <input type="text" id="nacionalidade" name="nacionalidade" maxlength="100" required>
-</div>
+            <div class="form-group">
+                <label for="apelido">Apelido (opcional)</label>
+                <input type="text" class="form-control" id="apelido">
+            </div>
+        </div>
 
-<div class="form-group">
-    <label for="naturalidade">Naturalidade:</label>
-    <input type="text" id="naturalidade" name="naturalidade" maxlength="100" required>
-</div>
+        <div class="col-md-6">
 
-<div class="form-group">
-    <label for="tipo_sanguineo">Tipo Sanguíneo:</label>
-    <select id="tipo_sanguineo" name="tipo_sanguineo" required>
-        <option value="">Selecione</option>
-        <option value="A+">A+</option>
-        <option value="A-">A-</option>
-        <option value="B+">B+</option>
-        <option value="B-">B-</option>
-        <option value="AB+">AB+</option>
-        <option value="AB-">AB-</option>
-        <option value="O+">O+</option>
-        <option value="O-">O-</option>
-    </select>
-</div>
+            <div class="form-group">
+                <label for="nacionalidade">Nacionalidade <span class="required-field" style="color: red;">*</span></label>
+                <input type="text" class="form-control" id="nacionalidade" required>
+            </div>
 
-<div class="form-group">
-    <label for="data_de_nascimento">Data de Nascimento:</label>
-    <input type="date" id="data_de_nascimento" name="data_de_nascimento" required>
-</div>
+            <div class="form-group">
+                <label for="naturalidade">Naturalidade <span class="required-field" style="color: red;">*</span></label>
+                <input type="text" class="form-control" id="naturalidade" required>
+            </div>
 
-<div class="form-group">
-    <label>Sexo:</label>
-    <div>
-        <input type="radio" id="sexo_m" name="sexo" value="M" required>
-        <label for="sexo_m" style="display: inline;">Masculino</label>
+            <div class="form-group">
+                <label for="tipo_sanguineo">Tipo Sanguíneo <span class="required-field" style="color: red;">*</span></label>
+                <select class="form-control" id="tipo_sanguineo" required>
+                    <option value="">Selecione</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                </select>
+            </div>
 
-        <input type="radio" id="sexo_f" name="sexo" value="F">
-        <label for="sexo_f" style="display: inline;">Feminino</label>
+            <div class="form-group">
+                <label for="data_nascimento">Data de Nascimento <span class="required-field" style="color: red;">*</span></label>
+                <input type="date" class="form-control" id="data_nascimento" required>
+            </div>
+
+            <div class="form-group">
+                <label>Sexo <span class="required-field" style="color: red;">*</span></label>
+                <div>
+                    <input type="radio" id="sexo_m" name="sexo" value="M" required>
+                    <label for="sexo_m">Masculino</label>
+
+                    <input type="radio" id="sexo_f" name="sexo" value="F">
+                    <label for="sexo_f">Feminino</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="peso">Peso Inicial (kg) <span class="required-field" style="color: red;">*</span></label>
+                <input type="number" class="form-control" id="peso" step="0.01" required>
+            </div>
+        </div>
+
     </div>
-</div>
+    <button type="submit" class="btn btn-primary mt-3">Enviar</button>
 
-<div class="form-group">
-    <label for="peso_inicial">Peso Inicial (kg):</label>
-    <input type="number" id="peso_inicial" name="peso_inicial" step="0.01" min="0" required>
 </div>
-
-<button type="submit">Enviar</button>

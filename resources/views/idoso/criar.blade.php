@@ -1,5 +1,6 @@
 @extends('layouts.principal')
 @section('titulo', 'idoso')
+@section('styles') @vite( 'resources/css/formulario.css') @endsection
 
 @section('conteudo')
 
