@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\idoso;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\idoso\IdosoRequest;
 use App\Models\idoso\Idoso;
-use Illuminate\Http\Request;
 
 class IdosoController extends Controller
 {
@@ -30,9 +30,9 @@ class IdosoController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(IdosoRequest $request)
     {
-        //$request = $request->validated();
+        $request->validated();
         Idoso::create($request->all());
         return redirect()->route('idoso.index')->with('success', 'idoso criado com sucesso');
     }
@@ -66,7 +66,7 @@ class IdosoController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Idoso $idoso)
+    public function update(IdosoRequest $request, Idoso $idoso)
     {
         //$request->validated();
 

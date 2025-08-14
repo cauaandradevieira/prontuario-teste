@@ -11,14 +11,14 @@ class Idoso extends Model
         'nome',
         'rg', 
         'cpf',
-        'apelido',      
-        'data_de_nascimento',
         'estado_civil',
-        'sexo',
+        'apelido',      
         'nacionalidade',
         'naturalidade',
         'peso_inicial',
         'tipo_sanguineo',
+        'data_de_nascimento',
+        'sexo',
         'ativo',
     ];
 
